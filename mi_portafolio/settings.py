@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import dj_database_url
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,12 +21,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-lr!-f3zi*22rl14kke5y!o@=adlo^v465kqbi7lc8+qrv7e!-d'
+# SECRET_KEY = 'django-insecure-lr!-f3zi*22rl14kke5y!o@=adlo^v465kqbi7lc8+qrv7e!-d'
+
+# Obtiene la SECRET_KEY de las variables de entorno o utiliza la clave generada al crear el proyecto
+
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-lr!-f3zi*22rl14kke5y!o@=adlo^v465kqbi7lc8+qrv7e!-d')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+import os
+
+ALLOWED_HOSTS = ["127.0.0.1","locallhost", ]
 
 
 # Application definition
@@ -75,6 +81,7 @@ WSGI_APPLICATION = 'mi_portafolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -82,7 +89,14 @@ DATABASES = {
     }
 }
 
-DATABASES["default"] = dj_database_url.parse("postgres://portafolio_santillan_user:SMTaM2G66nFKn5IB6P8GHYMrOI2CVxAa@dpg-cp72sc7sc6pc73cpsrg0-a.oregon-postgres.render.com/portafolio_santillan")
+DATABASE_URL = os.getenv('DATABASE_URL', 'sqlite:///:memory:')
+
+if DATABASE_URL:
+    DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+# database_url = os.environ.get("DATABASE_URL")
+
+
+# DATABASES["default"] = dj_database_url.parse(database_url)
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
