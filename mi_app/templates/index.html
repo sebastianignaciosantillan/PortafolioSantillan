@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+    {% load static %}
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="{% static 'css/estilo.css'%}">
+</head>
+<body>
+    <!-- MENU ENCABEZADO -->
+    <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <a href="#">
+                  <img src="{% static 'img/devB.png'%}" alt="logo develop">
+                </a>
+              </div>
+              
+            <nav id="nav">
+                <ul>
+                    <li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
+                    <li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>
+                    <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>
+                    <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
+                    <li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO</a></li>
+                    <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+    </div>
+
+    <!-- SECCION INICIO -->
+    <section id="inicio" class="inicio">
+        <div class="contenido-banner">
+            <div class="contenedor-img">
+                <img src="{% static 'img/yo..jpeg'%}" alt="">
+            </div>
+            <h1>Santillan Sebastian</h1>
+            <h2>FullStack Develop</h2>
+
+            <div class="redes">
+                <a href="https://github.com/sebastianignaciosantillan" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/sebastianignaciosantillan110284/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="mailto:sebastianignaciosantillan@gmail.com?subjet=Contacto" target="_blank"><i class="fa-brands fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="container">
+            <span class="text first-text"> I'm a <span/>
+            <span class="text sec-text"> Backend Java <span/>
+        </div>
+    </section>
+
+    <!-- SECCION SOBRE MI -->
+    <section id="sobremi" class="sobremi">
+        <div class="contenido-seccion">
+            <h2>Sobre Mí</h2>
+            <p><span>Hola, soy Sebastian Santillan, </span> un apasionado programador siempre en busca de desafíos y oportunidades de aprendizaje. Curioso por naturaleza, me mantengo al tanto de las últimas tendencias en desarrollo de software. Siempre estoy listo para enfrentar nuevos retos y mejorar constantemente en mi carrera.</p>
+
+            <div class="fila">
+                <!-- datos personales -->
+                <div class="col">
+                    <h3>Datos Personales</h3>
+                    <ul>
+                        <li>
+                            <strong>Cumpleaños</strong>
+                            11-02-1984
+                        </li>
+                        <li>
+                            <strong>Teléfono</strong>
+                            3855057114
+                        </li>
+                        <li>
+                            <strong>Email</strong>
+                            sebastianignaciosantillan@gmail.com
+                        </li>
+                    
+                        <li>
+                            <strong>Dirección</strong>
+                            Clodomira - Santiago del Estero, Argentina
+                        </li>
+                        <li>
+                            <strong>Ocupacion</strong>
+                            <span>Estudiante</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- intereses -->
+                
+                <div class="col">
+                    <h3>Intereses</h3>
+                    <div class="contenedor-intereses">
+                        <div class="interes">
+                            <i class="fa-solid fa-gamepad"></i>
+                            <span>JUEGOS</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-headphones"></i>
+                            <span>MUSICA</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-film"></i>
+                            <span>PELICULAS</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa fa-globe"></i>
+                            <span>NAVEGAR</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa fa-child"></i>
+                            <span>FAMILIA</span>
+                        
+                    </div>
+                </div>
+        
+            </div>
+        
+        </div>
+    </section>
+
+    <!-- SECCION SKILLS -->
+    <section id="skills" class="portfolio">
+        <div class="contenido-seccion">
+            <h2>SKILL</h2>
+            <div class="galeria">
+                <div class="proyecto" style="border: 2px solid #F5DE19; border-radius:30px; border-width: 0px 2px 10px 2px;">
+                    <img src="{% static 'img/jsM.png' %}" alt="" class="galeria-img">
+                </div>
+                <div class="proyecto" style="border: 2px solid #E44F26; border-radius:30px; border-width: 0px 2px 10px 2px;">
+                    <img src="{% static 'img/htmlM.png' %}" alt="" class="galeria-img">
+                </div>
+                <div class="proyecto" style="border: 2px solid #2299F8; border-radius:30px; border-width: 0px 2px 10px 2px;">
+                    <img src="{% static 'img/css3M.png' %}" alt="" class="galeria-img">
+                </div>
+                <div class="proyecto" style="border: 2px solid #7C11F8; border-radius:30px; border-width: 0px 2px 10px 2px;">
+                    <img src="{% static 'img/bootstrapM.png' %}" alt="" class="galeria-img">
+                </div>
+                <div class="proyecto" style="border: 2px solid #3377AC; border-radius:30px; border-width: 0px 2px 10px 2px;">
+                    <img src="{% static 'img/pythonM.png' %}" alt="" class="galeria-img">
+                </div>
+                <div class="proyecto" style="border: 2px solid #110E0E; border-radius:30px; border-width: 0px 2px 10px 2px;">
+                    <img src="{% static 'img/githubM.png' %}" alt="" class="galeria-img">
+                </div>
+                <div class="proyecto" style="border: 2px solid #00618B; border-radius:30px; border-width: 0px 2px 10px 2px;">
+                    <img src="{% static 'img/mysqlM.png' %}" alt="" class="galeria-img">
+                </div>
+                <div class="proyecto" style="border: 2px solid #D7292A; border-radius:30px; border-width: 0px 2px 10px 2px;">
+                    <img src="{% static 'img/javam.png' %}" alt="" class="galeria-img">
+                </div>
+                <div class="proyecto" style="border: 2px solid #8BC34A; border-radius:30px; border-width: 0px 2px 10px 2px;">
+                    <img src="{% static 'img/spring-bootM.png' %}" alt="" class="galeria-img">
+                </div>
+                <div class="proyecto" style="border: 2px solid #8BC34A; border-radius:30px; border-width: 0px 2px 10px 2px;">
+                    <img src="{% static 'img/django.svg' %}" alt="" style="width: 100%; height: auto;">
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- SECCION CURRICULUM -->
+    <section id="curriculum" class="curriculum">
+        <div class="contenido-seccion">
+            <h2>Curriculum</h2>
+            <div class="fila">
+                <div class="col izquierda">
+                    <h3>   </h3>
+                    <div class="item izq">
+                        <h4>Tecnicatura Superior en Programacion</h4>
+                        <span class="casa">ITSE-Instituto Tecnologico de Santiago del Estero</span>
+                        <span class="fecha">2024</span>
+                        <p>Me encuentro cursando la carrera de Tecnicatura Superior en Programación y me recibiré este año. La carrera cuenta con excelentes profesores y un programa de estudios vigente en cuanto a las últimas tecnologías y metodologías de trabajo. Entre las asignaturas que cursé, las más relevantes fueron Java, Python, Swing, bases de datos relacionales y no relacionales, lógica, ingeniería de software, sistemas operativos, y trabajos grupales con metodología Agiles. También he utilizado herramientas como GitHub y Trello para la asignación de tareas, entre otras.</p>
+                        <div class="conectori">
+                            <div class="circuloi"></div>
+                        </div>
+                    </div>
+                    <div class="item izq">
+                        <h4>FullStack Python</h4>
+                        <span class="casa">Programa Codo a Codo 4.0</span>
+                        <span class="fecha">2022</span>
+                        <p>Realice el Fullstack del programa de Codo a Codo. En el mismo vimos los fundamentos de la programacion y herramientas como html, css javascript. Al final de la cursado realice un trabajo final el cual consiste en una pagina estatica cuya tematica fue la elaboracion de un sitio web de un Gymnasio. </p>
+                        <div class="conectori">
+                            <div class="circuloi"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col derecha">
+                    <h3>   </h3>
+                    <div class="item der">
+                        <h4>Backend-Spring Boot</h4>
+                        <span class="casa">Oracle Next-Education</span>
+                        <span class="fecha">2022</span>
+                         <p>Poseo una certificación de finalización del programa Oracle Next-Education, el cual abarcó un total de 340 horas de formación especializada en Backend con Java y Spring Boot. Durante este programa, adquirí habilidades clave en el manejo de herramientas esenciales como Github y Trello, así como en la aplicación de metodologías ágiles (Scrum). Además, el curso incluyó un componente dedicado al desarrollo de habilidades blandas, fortaleciendo así mi perfil profesional.</p>
+                        <div class="conectord">
+                            <div class="circulod"></div>
+                        </div>
+                    </div>
+                    <div class="item der">
+                        <h4>Backend-Django</h4>
+                        <span class="casa">Codo a Codo</span>
+                        <span class="fecha">2024</span>
+                        <p>Me encuentro cursando actualmente la formacion de Backend con el framework Django en el programa Codo a Codo</p>
+                        <div class="conectord">
+                            <div class="circulod"></div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col derecha">
+                    <h3>   </h3>
+                    
+                    <div class="item der">
+                        <h4>Backend Spring Boot</h4>
+                        <span class="casa">Codo a Codo 4.0 </span>
+                        <span class="fecha">2023</span>
+                        <p>Finalice recientemente el curso de Spring boot por parte de Codo a Codo donde reforce los conceptos aprendidos. El proyecto final consistio en desarrollar el backend de un Home Banking que admita las funciones mas conocidas. Alta de un usuario, consulta de saldo, transferencias entre cuentas y solicitudes de prestamos. </p>
+                        <div class="conectord">
+                            <div class="circulod"></div>
+                        </div>
+                    </div>
+                    <div class="item der">
+                        <h4>Diseño Web con HTML5 + CSS</h4>
+                        <span class="casa">Fundacion Telefonica Movistar - Conectar Empleo </span>
+                        <span class="fecha">2022</span>
+                        <p>Finalice con exito la introduccion al curso de html5 y css que brinda el programa de la Fundacion Telefonica Movistar que tuvo la duracion de 30 hs. </p>
+                        <div class="conectord">
+                            <div class="circulod"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="item der">
+                        <h4>Programacion Web</h4>
+                        <span class="casa">Plataforma de aprendi virtual - Argentina Unida</span>
+                        <span class="fecha">2022</span>
+                        <p>Finalice con exito la introduccion al curso de Programacion web que tuvo la duracion de 40 hs. </p>
+                        <div class="conectord">
+                            <div class="circulod"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- SECCION PORTFOLIO -->
+    <section id="portfolio" class="portfolio">
+        <div class="contenido-seccion">
+            <h2>PORTFOLIO</h2>
+            <div class="galeria">
+                <div class="card mb-3" style="background-color: #131517; display: flex; justify-content: center;">
+                    <div class="video card-img-top">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/J807ARSDPSQ?si=KH-wsY-ZUcwhWZ1v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text" style="color: #e2d9d9; font-size: 15px;">
+                            Proyecto desarrollado con html y css como parte del trabajo practico final de Codo a Codo Fullstack Python.
+                        </p>
+                    </div>
+                </div>
+            
+                <div class="card mb-3" style="background-color: #131517; display: flex; justify-content: center;">
+                    <div class="video card-img-top">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ANh9rTNtbWU?si=IF3IUdiBv9dAd0Dn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text" style="color: #e2d9d9; font-size: 15px;">
+                            Juego desarrollado con Java y Swing como parte de un trabajo practico requerido por la asignatura Programacion 1.
+                        </p>
+                    </div>
+                </div>
+            
+                <div class="card mb-3" style="background-color: #131517; display: flex; justify-content: center;">
+                    <div class="video card-img-top">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ItgIdaK9GMY?si=CUPoX84JsJIm84Re" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text" style="color: #e2d9d9; font-size: 15px;">
+                            Proyecto web desarrollado con java, thymeleaf y spring boot para un formulario con multiples tipos de entrada. Valida por IP que el mismo usuario no complete 2 veces el formulario.
+                        </p>
+                    </div>
+                </div>
+            
+                <div class="card mb-3" style="background-color: #131517; display: flex; justify-content: center;">
+                    <div class="video card-img-top">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/KLvNC496Cmo?si=wdKmvEnZIJgvgNIj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text" style="color: #e2d9d9; font-size: 15px;">
+                            Home Banking desarrollado con Java y Spring boot y postman como parte del trabajo final de la especialidad de backend de Codo a Codo.
+                        </p>
+                    </div>
+                </div>
+            
+                <div class="card mb-3" style="background-color: #131517; display: flex; justify-content: center;">
+                    <div class="video card-img-top">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Jp820VvEJVw?si=g2jbTwXCWX51pyoh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
+                    <div class="card-body">
+                        <p class="card-text" style="color: #e2d9d9; font-size: 15px;">
+                            Proyecto web de Tarot desarrollado con Python, Django, Material design de bootstrap. Posee un carro de compras, permite registro de nuevos clientes, posee un formulario de consultas.
+                        </p>
+                    </div>
+                </div>
+            
+                <div class="card mb-3" style="background-color: #131517; display: flex; justify-content: center;">
+                    <div class="video card-img-top">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/iVukyZYw39Q?si=u427Yz1sXORiePbL&start=3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text" style="color: #e2d9d9; font-size: 15px;">
+                            Proyecto web desarrollado con Python, Django, Material design de bootstrap. Se uso Calendar y DataTable de js y ventanas modales para mejorar la experiencia del usuario.
+                            Permite solicitar un turno online y hacer consultas. El admin puede agendar turnos y modificarlos. Cuenta con un apartado Odontograma que facilita tener un registro dental para cada paciente. 
+                            Tambien el agregado de comentarios generales o especificos para cada paciente.
+                            Permite el alta de nuevos pacientes. Se procuro que el usuario Admin pueda acceder a las funciones mas importantes de manera intuitiva. En etapa de desarrollo actualmente.  
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!--Seccion de certificados-->
+    <section id="portfolio" class="portfolio">
+        <h2>CERTIFICACIONES</h2>
+
+        
+            <div class="row">
+                <div class="col-6">
+                    <div>
+                        <p style="text-align: center;">
+                            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">
+                                Codo a Codo Fullstack
+                            </a>
+                        </p>
+                        <div class="collapse" id="collapseExample1">
+                            <div class="card card-body">
+                                <img src="{% static 'img/certificaciones/1.png' %}" alt="Descripción de la imagen 1" class="img-fluid custom-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div>
+                        <p style="text-align: center;">
+                            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+                                Fundacion Telefonica Movistar
+                            </a>
+                        </p>
+                        <div class="collapse" id="collapseExample2">
+                            <div class="card card-body">
+                                <img src="{% static 'img/certificaciones/2.png' %}" alt="Descripción de la imagen 2" class="img-fluid custom-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div>
+                        <p style="text-align: center;">
+                            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample1">
+                                Fundacion Telefonica Movistar
+                            </a>
+                        </p>
+                        <div class="collapse" id="collapseExample3">
+                            <div class="card card-body">
+                                <img src="{% static 'img/certificaciones/3.png' %}" alt="Descripción de la imagen 1" class="img-fluid custom-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div>
+                        <p style="text-align: center;">
+                            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample2">
+                                Oracle Next-Education
+                            </a>
+                        </p>
+                        <div class="collapse" id="collapseExample4">
+                            <div class="card card-body">
+                                <img src="{% static 'img/certificaciones/5.png' %}" alt="Descripción de la imagen 2" class="img-fluid custom-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        
+        <style>
+            .custom-img {
+                max-width: 100%;
+                height: auto;
+            }
+        </style>
+        
+        
+    </section>
+
+
+    <!-- SECCION CONTACTO -->
+    <section id="contacto" class="contacto">
+        <div class="contenido-seccion">
+            <h2>CONTACTO</h2>
+            <div class="fila">
+                <!-- Formulario -->
+                <div class="col">
+                    {% if mensaje_exitoso %}
+                    <p>Tu mensaje ha sido enviado con éxito.</p>
+                    {% endif %}
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit">
+                            Enviar Mensaje<i class="fa-solid fa-paper-plane"></i>
+                            <span class="overlay"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <!-- footer -->
+    <footer>
+        <a href="#inicio" class="arriba">
+            <i class="fa-solid fa-angles-up"></i>
+        </a>
+        <div class="redes">
+            <a href="https://github.com/sebastianignaciosantillan" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/sebastianignaciosantillan110284/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="mailto:sebastianignaciosantillan@gmail.com?subjet=Contacto" target="_blank"><i class="fa-brands fa-envelope"></i></a>
+        </div>
+    </footer>
+    
+    <script src="{% static 'js/script.js'%}"></script>
+</body>
+</html>
