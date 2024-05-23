@@ -32,7 +32,11 @@ DEBUG = False
 
 import os
 
-ALLOWED_HOSTS = ["127.0.0.1","locallhost", ]
+ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
+
+
 
 
 # Application definition
